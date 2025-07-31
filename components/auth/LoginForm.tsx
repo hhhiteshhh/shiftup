@@ -49,13 +49,15 @@ function LoginForm() {
         } else {
           console.log(result); // handle other statuses if needed
         }
-      } catch (e) {}
+      } catch (e) {
+        console.log(e);
+      }
     });
   });
   useEffect(() => {
     if (!user) return;
     router.push("/dashboard");
-  }, [user]);
+  }, [user, router]);
   return (
     <Card className="w-full max-w-sm bg-shiftup-dark-gray border-0 py-10">
       <CardHeader className="space-y-5">
